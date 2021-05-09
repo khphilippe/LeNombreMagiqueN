@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views ="clr-namespace:LeNombreMagique.Views"
+            
+            
+              x:Class="LeNombreMagique.Views.GamePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <views:StarView   Grid.Row="0" Grid.Column="0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView  Rotation="-10" HeightRequest="120" 
+                         Margin="-20,100,-20,-95" Color="{StaticResource shadowColor}" 
+                Grid.Row="2" Grid.Column="0"/>
+
+
+
+                <StackLayout Grid.Row="1" Grid.Column="0"  Orientation="Vertical" Margin="70"  
+                     VerticalOptions="Center">
+                    <Label  VerticalOptions="Center" Text="Devinez le nombre magique" FontSize="40"
+                     TextColor="{StaticResource titleColor}"
+                     HorizontalTextAlignment="Center" />
+                    <Label VerticalOptions="Center" Text="Entre x et x " x:Name="minMaxLabel"  FontSize="20"
+                   TextColor="{StaticResource titleColor}" HorizontalTextAlignment="Center"/>
+
+                    <StackLayout Margin="80,20,80,0" >
+                        <Entry    VerticalOptions="Center" x:Name="numberEntry" 
+                           Placeholder="?" PlaceholderColor="White" FontSize="80"
+                           HeightRequest="120" 
+                            Keyboard="Numeric" HorizontalTextAlignment="Center" 
+                            BackgroundColor="{StaticResource shadowColor}" />
+
+                        <Button x:Name="Deviner" BackgroundColor="{StaticResource shadowColor}" 
+                            Text="Deviner" Clicked="Deviner_Clicked" />
+                    </StackLayout>
+
+                </StackLayout>
+
+
+            </Grid>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
